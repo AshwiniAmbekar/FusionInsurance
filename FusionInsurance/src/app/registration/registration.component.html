@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <form #pform="ngForm" class="form-horizontal" ngNativeValidate (ngSubmit)="userRegistration()">
+        <div class="register-container">
+            <h2>Registration</h2>
+            <hr>
+            <div class="registration-fields">
+
+                User Name:<input type="text" [(ngModel)]="registration.userName" name="userName"
+                          placeholder="user-name" autofocus required 
+                          oninvalid="this.setCustomValidity('Witinnovation')">
+                          onvalid="this.setCustomValidity('')">
+                    
+                <br />
+
+                First Name : <input type="text" [(ngModel)]="registration.firstName" name="firstName"
+                    placeholder="First Name" autofocus required>
+                <br />
+
+                Last Name : <input type="text" [(ngModel)]="registration.lastName" name="lastName"
+                    placeholder="Last Name" autofocus required>
+                <br />
+
+                Gender : <input type="radio" [(ngModel)]="registration.gender" name="role" value="Male"> Male <br>
+                <input type="radio" [(ngModel)]="registration.gender" name="role" value="Female"> Female 
+                <br/>
+
+                Mobile : <input type="text" [(ngModel)]="registration.mobile" name="mobile" placeholder="Mobile Number"
+                    (keypress)="keyPress($event)" autofocus required>
+                <br />
+
+                E-mail Id : <input type="text" [(ngModel)]="registration.emailId" name="emailId" placeholder="Email Id"
+                autofocus required>
+                <br />
+
+                <div class="form-group">
+                Password : <input type="password" [(ngModel)]="registration.password" name="password"
+                    placeholder="Password" autofocus required>
+                <br />
+                 </div>
+
+                <div class="form-group">
+                Confirm Password : <input type="password" [(ngModel)]="registration.confirmPassword"
+                    name="confirmPassword" placeholder="Confirm Password" autofocus required>
+                <br />
+                </div>
+                <p>{{array['password']}}</p>
+
+                Address : <input type="text" [(ngModel)]="registration.address" name="address" placeholder="Address"
+                autofocus required>
+                <br />
+
+                City : <input type="" [(ngModel)]="registration.city" name="city" placeholder="City" autofocus required>
+                <br />
+
+                State : <input type="text" [(ngModel)]="registration.state" name="state" placeholder="State" required>
+                <br />
+
+                <input type="hidden" [(ngModel)]="registration.role" name="role" value="0">
+
+                <input type="submit" value="Register" />
+
+            </div>
+        </div>
+    </form>
+
+</body>
+
+</html>
